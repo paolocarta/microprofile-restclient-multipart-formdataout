@@ -20,8 +20,7 @@ public class MultipartResourceTest {
                 .body(containsString("Content-Disposition: form-data; name=\"file1\""),
                         containsString("Content-Disposition: form-data; name=\"file2\""),
                         containsString("the content"),
-                        containsString("the second content"),
-                        containsString("greeting, greeting2"));
+                        containsString("the second content"));
     }
 
 }

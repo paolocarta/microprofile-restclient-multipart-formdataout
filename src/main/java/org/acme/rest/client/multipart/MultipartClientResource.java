@@ -25,13 +25,11 @@ public class MultipartClientResource {
 
         MultipartFormDataOutput outputData = new MultipartFormDataOutput();
 
-        outputData.addFormData("filenames", "greeting, greeting2", MediaType.TEXT_PLAIN_TYPE);
-
         byte[] file1Content = "the content".getBytes(UTF_8);
-        outputData.addFormData("file1", file1Content, MediaType.APPLICATION_OCTET_STREAM_TYPE);
+        outputData.addFormData("file1", file1Content, MediaType.APPLICATION_OCTET_STREAM_TYPE, "file1");
 
         byte[] file2Content = "the second content".getBytes(UTF_8);
-        outputData.addFormData("file2", file2Content, MediaType.APPLICATION_OCTET_STREAM_TYPE);
+        outputData.addFormData("file2", file2Content, MediaType.APPLICATION_OCTET_STREAM_TYPE, "file2");
 
         return service.sendMultipartData(outputData);
     }
